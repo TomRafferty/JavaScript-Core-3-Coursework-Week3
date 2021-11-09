@@ -70,3 +70,15 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+function gryffindorResidents(arr) {
+  let names = [];
+  for (let i = 0; i < arr.length; i++) {
+    let [{ house, firstName, lastName }] = arr[i];
+    if (house === "Gryffindor") {
+      names.push(`${firstName} ${lastName}`);
+    }
+  }
+  return names;
+}
+console.log(gryffindorResidents(hogwarts));
