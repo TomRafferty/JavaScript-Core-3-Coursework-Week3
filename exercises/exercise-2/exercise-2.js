@@ -74,11 +74,24 @@ let hogwarts = [
 function gryffindorResidents(arr) {
   let names = [];
   for (let i = 0; i < arr.length; i++) {
-    let [{ house, firstName, lastName }] = arr[i];
+    let { house, firstName, lastName } = arr[i];
     if (house === "Gryffindor") {
       names.push(`${firstName} ${lastName}`);
     }
   }
   return names;
 }
+
+function teachersWhoHavePets(arr) {
+  let names = [];
+  for (let i = 0; i < arr.length; i++) {
+    let { occupation, pet, firstName, lastName } = arr[i];
+    if (occupation === "Teacher" && pet !== null) {
+      names.push(`${firstName} ${lastName}`);
+    }
+  }
+  return names;
+}
+
 console.log(gryffindorResidents(hogwarts));
+console.log(teachersWhoHavePets(hogwarts));
